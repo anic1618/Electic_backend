@@ -1,0 +1,49 @@
+# shell only
+'''
+from testingSite.models import Readings
+from testingSite.api.serializers import ReadingsSerializer
+#reading = Readings.objects.get(id=1)
+reading = Readings.objects.filter(meter_id='c30d4d9a-48b7-56fa-b714-c36247ee7aa8')
+reading_ser = ReadingsSerializer(reading,many=true)
+reading_ser.data
+
+
+from testingSite.models import User,PostData
+from testingSite.api.serializers import PostDataSerializer,UserSerializer
+user = User.objects.get(id=1)
+pst = PostData(user,'adadada')
+pst_ser = PostDataSerializer(pst)
+pst_ser.data
+
+///Building list
+
+
+'''
+'''
+import json
+
+from rest_framework import generics
+
+j = json.loads('{"id":0,"is_superuser":false,"result":"{\"mData\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjczNGUxYzkyMmE4NWQwNDM2Njk1NTY4YjZmMzY2MzFhNmI1MzhkZmIifQ.eyJhenAiOiIxMDIwMjUxODAwNDY2LTdxdjg2ZWdvaGVkaHNyN2UwYWhtYzRqOTk4MWVha29kLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTAyMDI1MTgwMDQ2Ni1xdmNibzV1MjM0cDUxZGdtcmlrOWRjMGZ2azJmbW1qZC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwODU0MDM3MDc2Mzg3NTU3MDgxNSIsImhkIjoiaWlpdGQuYWMuaW4iLCJlbWFpbCI6ImFuaWwxNjAwN0BpaWl0ZC5hYy5pbiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE1MDA4MTk1ODcsImV4cCI6MTUwMDgyMzE4NywibmFtZSI6IkFuaWwgQ2hvdWJleSIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLTBJNVBDeTdFYnR3L0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FNcDVWVW9nY0lJcERhZGRYN3dxb0hsZnlRc2xCYjFYQ0Evczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFuaWwiLCJmYW1pbHlfbmFtZSI6IkNob3ViZXkiLCJsb2NhbGUiOiJlbiJ9.5Eaz3LHn93Jd8EAOnsn-G28sNDXWYgk-B5UONuHxHfKO8aKesjaHiSlRi_BckEORDOLGa2rivyyGidP4LKhf9ohl6rSDN_L7IXCtHBekc4JBjF94K8HSk4NOWkyGWoRT11E7ihlldsMTQxvJHJGIEy7pPhcZKFSJc061IMqtrrJ1d7hLm9NWEgdBiYqF1f0k5PW06mk6vQ4vsxzd_C1-S8KUBSA7mhj1RPs2pvTBX7VSYn4BMPXVgVNhPe_LGmVr5tsYD9Y1MJvwxMFfl2m95-1xhqLtWtNxjQtQ5yMNRUovXR8iPMHFIQkUXmFcwal66sDJhmixnNuTGEv_YnHKKQ\",\"mUrl\":\"http://192.168.33.40:8000/testing/verify\"}"}')
+j['result']
+
+
+import json
+j = json.loads('{"id":0,"is_superuser":false,"mData":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjczNGUxYzkyMmE4NWQwNDM2Njk1NTY4YjZmMzY2MzFhNmI1MzhkZmIifQ.eyJhenAiOiIxMDIwMjUxODAwNDY2LTdxdjg2ZWdvaGVkaHNyN2UwYWhtYzRqOTk4MWVha29kLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTAyMDI1MTgwMDQ2Ni1xdmNibzV1MjM0cDUxZGdtcmlrOWRjMGZ2azJmbW1qZC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwODU0MDM3MDc2Mzg3NTU3MDgxNSIsImhkIjoiaWlpdGQuYWMuaW4iLCJlbWFpbCI6ImFuaWwxNjAwN0BpaWl0ZC5hYy5pbiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE1MDA4Mjc1NDQsImV4cCI6MTUwMDgzMTE0NCwibmFtZSI6IkFuaWwgQ2hvdWJleSIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLTBJNVBDeTdFYnR3L0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FNcDVWVW9nY0lJcERhZGRYN3dxb0hsZnlRc2xCYjFYQ0Evczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFuaWwiLCJmYW1pbHlfbmFtZSI6IkNob3ViZXkiLCJsb2NhbGUiOiJlbiJ9.UvNu6lpeKRa_5fav-YW9k6MBNHACsig_5W92gSBvir_lPRfZzanfwOSpCEq6Qwwu4xMQrrylPJ-GXq7vklJO2KHHgT52fFUPxFWgcep-f_UUX8lUH41xwhnwFPUzZnpDjlic_qSIvbUlewat_h2O2es25redJiqqcdslO2GEYSBoBsomqlM7NYR40H0Yep8Jmmmv0gzCb2ab4SgRPKsA0LOCDDbWjSa9RuO-mz6gbnlWs4DW3oP0U7JQrjyF5Tr-x5qkqIXhKduMnR4nRYuZUcIZ48bNGX3I7EhhvWU65MPNvMRy-PBicfVkZiJuFd-ca_Fhlu08ZtzB48EiNugLhw","mURL":"http://192.168.33.40:8000/testing/verify"}')
+j['is_superuser']
+
+from rest_framework import generics
+from rest_framework.generics import ListCreateAPIView
+from testingSite.models import Readings
+from testingSite.api.serializers import ReadingsSerializer
+data = Readings.objects.filter(meter_id='c30d4d9a-48b7-56fa-b714-c36247ee7aa8').only('timestamp', 'readings')
+tem = generics.ListAPIView.as_view(queryset=data, serializer_class=ReadingsSerializer)
+'''
+'''
+import datetime
+now = datetime.datetime.now()
+'''
+from django.utils.timezone import localtime, now
+
+# get now datetime based upon django settings.py TZ_INFO
+localtime(now())
